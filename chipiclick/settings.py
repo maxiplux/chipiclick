@@ -2,18 +2,28 @@
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+import os.path
+import locale
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
-
+PROJECT_DIR = os.path.dirname(__file__)
+PROJECT_PATH = os.path.abspath(PROJECT_DIR)
 MANAGERS = ADMINS
+if sys.platform == 'win32':
+    locale.setlocale(locale.LC_ALL, 'esn')
+elif sys.platform == 'linux2':
+    locale.setlocale(locale.LC_ALL, 'es_CO.utf8')
+elif sys.platform == 'darwin':
+    locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': '%s/database.db'% PROJECT_PATH,                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
+        'OPTIONS':{"timeout": 20},
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
@@ -59,18 +69,14 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
-
-# URL prefix for static files.
-# Example: "http://media.lawrence.com/static/"
+STATIC_ROOT = os.path.normpath(os.path.join(PROJECT_PATH, 'static/'))
 STATIC_URL = '/static/'
+SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
+    os.path.normpath(os.path.join(PROJECT_PATH, 'static/media/')),
+    )
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -81,7 +87,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '^#@mfy91d5)a&amp;toz2xl8vht$j3p-=c05v-bfp!_a!dh9ih8=sl'
+SECRET_KEY = '^#@mfy91d5)a&amdsp;toz2xl8vh2dt$j3p-=c05v-bfp!_a!dh9ih8=sl'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -106,10 +112,8 @@ ROOT_URLCONF = 'chipiclick.urls'
 WSGI_APPLICATION = 'chipiclick.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
+    os.path.join(os.path.dirname(__file__), 'templates').replace('\\', '/'),
+    )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -119,7 +123,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
