@@ -14,13 +14,6 @@ ADMINS = (
 PROJECT_DIR = os.path.dirname(__file__)
 PROJECT_PATH = os.path.abspath(PROJECT_DIR)
 MANAGERS = ADMINS
-if sys.platform == 'win32':
-    locale.setlocale(locale.LC_ALL, 'esn')
-elif sys.platform == 'linux2':
-    locale.setlocale(locale.LC_ALL, 'es_CO.utf8')
-elif sys.platform == 'darwin':
-    locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
