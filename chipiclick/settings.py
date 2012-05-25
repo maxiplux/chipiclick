@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Django settings for chipiclick project.
 
 DEBUG = True
