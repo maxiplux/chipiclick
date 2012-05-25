@@ -4,6 +4,8 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 import os.path
 import locale
+import sys
+
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
