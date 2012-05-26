@@ -153,8 +153,8 @@ LOGGING = {
         },
     }
 }
-FACEBOOK_APP_ID='178943588852009'
-FACEBOOK_APP_SECRET='b8a96fe8527202bbc19150717c0db2f2'
+FACEBOOK_APP_ID='53291775756'
+FACEBOOK_APP_SECRET='0645437b4865dc73168aeecd1104ed27'
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django_facebook.context_processors.facebook',
     'django.contrib.auth.context_processors.auth',
