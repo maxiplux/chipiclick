@@ -1,1 +1,1 @@
-from urls import  *
+from chipiclick.urls import  *
