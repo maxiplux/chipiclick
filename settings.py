@@ -8,9 +8,6 @@ import locale
 import sys
 
 
-ADMINS = (
-# ('Your Name', 'your_email@example.com'),
-)
 PROJECT_DIR = os.path.dirname(__file__)
 
 PROJECT_PATH = os.path.abspath(PROJECT_DIR)
