@@ -173,4 +173,4 @@ AUTHENTICATION_BACKENDS = (
 
 
 
-AUTH_PROFILE_MODULE = 'django_facebook.FacebookProfile'
+AUTH_PROFILE_MODULE = 'perfil.Perfil'

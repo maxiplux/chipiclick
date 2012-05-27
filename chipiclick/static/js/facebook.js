@@ -54,7 +54,7 @@ facebookClass.prototype = {
        {
             defaultScope = facebookDefaultScope;  
        } else {
-           defaultScope = ['email', 'user_about_me', 'user_birthday', 'user_website','user_photos'];
+           defaultScope = ['email', 'user_about_me', 'user_birthday', 'user_website','user_photos','user_interests'];
        }
        return defaultScope;
     },
