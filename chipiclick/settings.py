@@ -122,7 +122,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
      'django.contrib.admin',
     'django_facebook',
-    'modulos.perfiles',
+    'chipiclick.modulos.perfiles',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
@@ -174,4 +174,4 @@ AUTHENTICATION_BACKENDS = (
 
 
 
-AUTH_PROFILE_MODULE = 'modulos.perfiles.Perfil'
+AUTH_PROFILE_MODULE = 'chipiclick.modulos.perfiles.Perfil'
