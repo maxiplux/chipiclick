@@ -12,7 +12,7 @@ ADMINS = (
 # ('Your Name', 'your_email@example.com'),
 )
 PROJECT_DIR = os.path.dirname(__file__)
-PROJECT_PATH =os.path.normpath(os.path.join(os.path.abspath(PROJECT_DIR), 'chipiclick/')),
+PROJECT_PATH =os.path.normpath(os.path.join(PROJECT_DIR, 'chipiclick/'))
 MANAGERS = ADMINS
 DATABASES = {
     'default': {
