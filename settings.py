@@ -178,4 +178,4 @@ AUTHENTICATION_BACKENDS = (
 
 
 
-AUTH_PROFILE_MODULE = 'modulos.perfiles.Perfil'
+AUTH_PROFILE_MODULE = 'modulos.perfiles.models.Perfil'
