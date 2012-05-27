@@ -1,1 +1,1 @@
-from settings import  *
+from chipiclick.settings import  *
