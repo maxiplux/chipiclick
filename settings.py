@@ -19,7 +19,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '%s/chipiclick/database.db'% PROJECT_PATH,                      # Or path to database file if using sqlite3.
+        'NAME': '%s/database.db'% PROJECT_PATH,                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'OPTIONS':{"timeout": 20},
         'PASSWORD': '',                  # Not used with sqlite3.
@@ -67,7 +67,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.normpath(os.path.join(PROJECT_PATH, '/chipiclick/static/')).replace('\\', '/')
+STATIC_ROOT = os.path.normpath(os.path.join(PROJECT_PATH, '/static/')).replace('\\', '/')
 STATIC_URL = '/static/'
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 
@@ -112,9 +112,6 @@ WSGI_APPLICATION = 'chipiclick.wsgi.application'
 TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(__file__), 'chipiclick/templates').replace('\\', '/'),
     )
-
-
-
 
 INSTALLED_APPS = (
     'django.contrib.auth',
