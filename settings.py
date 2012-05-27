@@ -12,7 +12,7 @@ ADMINS = (
 # ('Your Name', 'your_email@example.com'),
 )
 PROJECT_DIR = os.path.dirname(__file__)
-PROJECT_PATH = os.path.abspath(PROJECT_DIR)
+PROJECT_PATH =os.path.normpath(os.path.join(os.path.abspath(PROJECT_DIR), 'chipiclick/')),
 MANAGERS = ADMINS
 DATABASES = {
     'default': {
@@ -71,7 +71,7 @@ SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    os.path.normpath(os.path.join(PROJECT_PATH, 'static/media/')),
+    os.path.normpath(os.path.join(PROJECT_PATH, 'chipiclick/static/media/')),
     )
 
 # List of finder classes that know how to find static files in
@@ -108,7 +108,7 @@ ROOT_URLCONF = 'chipiclick.urls'
 WSGI_APPLICATION = 'chipiclick.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'templates').replace('\\', '/'),
+    os.path.join(os.path.dirname(__file__), 'chipiclick/templates').replace('\\', '/'),
     )
 
 INSTALLED_APPS = (
