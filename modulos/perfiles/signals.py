@@ -1,6 +1,6 @@
 __author__ = 'juan'
 
-from  chipiclick.modulos.perfiles.models import  Perfil
+from  modulos.perfiles.models import  Perfil
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 
