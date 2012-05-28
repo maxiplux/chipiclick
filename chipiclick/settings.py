@@ -174,9 +174,4 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     )
 
-
-
-
-
-
-AUTH_PROFILE_MODULE = 'chipiclick.modulos.perfiles.Perfil'
+AUTH_PROFILE_MODULE = 'perfiles.Perfil'
